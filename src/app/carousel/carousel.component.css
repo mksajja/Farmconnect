@@ -54,3 +54,6 @@ div.new_html_code {
     display:block;
     border:1px solid red;
   }
+  .sample {
+      margin: 2px;
+  }
