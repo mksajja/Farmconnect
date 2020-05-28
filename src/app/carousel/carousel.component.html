@@ -3,15 +3,12 @@
       <div class="col-md-12 ">
         <ngb-carousel *ngIf="notify_list">
           <ng-template ngbSlide *ngFor="let notify of notify_list">
-
-
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-6 new_html_code" >
                   <!-- <img [src]="notify.img" alt="Random slide">
-
                   -->
-                <div class="new_html_code"></div>
-                <div class="carousel-caption new_html_code">
+               <!--<div class="new_html_code"></div>-->
+                <div class="carousel-caption">
                   <p [innerText]="notify.notification"></p>
                 </div>
               </div>

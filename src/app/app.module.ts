@@ -23,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
