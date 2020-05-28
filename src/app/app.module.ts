@@ -8,12 +8,16 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TradeInfoTableComponent } from './trade-info-table/trade-info-table.component';
+import { MatTableModule } from '@angular/material/table'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselComponent
+    CarouselComponent,
+    TradeInfoTableComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-
+    BrowserAnimationsModule,
+    MatTableModule,
 
   ],
   providers: [],
