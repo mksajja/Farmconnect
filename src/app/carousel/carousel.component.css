@@ -3,10 +3,10 @@ ngb-carousel {
     margin: 50px auto;
 }
 
-ngb-carousel img {
+/*ngb-carousel img {
     width: 100%;
     outline: none;
-}
+}*/
 
 ngb-carousel {
     width: inherit;
@@ -48,7 +48,7 @@ div.new_html_code {
     height:100px;
     min-width:150px;
     min-height:100px;
-    max-width:200px;
+    max-width:260px;
     max-height:100px;
     overflow:hidden;
     display:block;
