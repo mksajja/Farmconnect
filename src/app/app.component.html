@@ -1,6 +1,6 @@
 <div>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-info rounded">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top bg-info rounded">
         <a class="navbar-brand" href="#">Farmers</a>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -21,41 +21,42 @@
       </nav>
 
 <app-carousel></app-carousel>
-     <div class="">
+     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-6">
-          <div class="input-group">
-              <div class="input-group-prepend">
-                <select id="tradeorproductcategory"  class="browser-default btn btn-primary">
+          <div class="row">
+
+
+              <div class="col-sm-6">
+                  <select class="form-control" id="tradeorproductcategory" style="background-color: beige;">
                   <option selected>Buy/Sell/Farm Equipment/Etc</option>
                   <option value="1">Buy</option>
                   <option value="2">Sell</option>
                   <option value="3">Farm Equipment</option>
                   <option value="4">Cold Storage</option>
-                </select>
+                  </select>
               </div>
-              <input type="text" class="form-control" placeholder="Product Name ">
+
+
+              <div class="col-sm-6">
+              <input type="text" class="form-control" placeholder="Product Name " style="background-color: beige;">
           </div>
+
+        </div>
       </div>
-      <div class="col-sm-4">
-        <div class="row">
-          <div class="input-group">
-            <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px;">
-              <input type="text" class="form-control" placeholder="Location">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <input type="text" class="form-control" placeholder="Location" style="background-color: beige;">
             </div>
-            <div class="col-sm-6 input-group-append" style="padding-left: 0px;">
-              <input type="number" name="distance" class="form-control btn btn-primary " placeholder="Distance in KM" min="20" max="100">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <input type="number" name="distance" class="form-control" style="background-color: beige;" placeholder="Distance in KM" min="20" max="100">
             </div>
-          </div>
 
+        <div class="col-lg-2 col-md-2 col-sm-2 ">
+          <button type="submit" class="btn btn-success" style="width: 100%;padding-top: 5px;padding-bottom: 5px;">Search</button>
         </div>
-        </div>
-        <div class="col-sm-2">
-          <button type="submit"><i class="fa fa-search"></i></button>
+         </div>
         </div>
 
-        </div>
-     </div>
 
      <app-trade-info-table> </app-trade-info-table>
 

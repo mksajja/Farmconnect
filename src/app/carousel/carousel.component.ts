@@ -23,6 +23,10 @@ export class CarouselComponent implements OnInit {
       notification:'4000 Farm Produce items are read for sale',
       //img: 'https://picsum.photos/900/500?random&t=4'
     },
+    {
+      notification:'600 buyers ready to buy',
+      //img:'https://picsum.photos/900/500?random&t=3'
+    },
   ]
 
   constructor() { }
