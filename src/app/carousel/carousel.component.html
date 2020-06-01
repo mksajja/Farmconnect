@@ -5,35 +5,24 @@
           <ng-template ngbSlide *ngFor="let notify of notify_list;let i=index">
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 new_html_code" >
-                  <!-- <img [src]="notify.img" alt="Random slide">
-                  -->
-               <!--<div class="new_html_code"></div>-->
                 <div class="carousel-caption">
                   <p [innerText]="notify.notification"></p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 new_html_code" *ngIf="notify_list[i+1]" >
-                <!-- <img [src]="notify.img" alt="Random slide">
-                -->
-             <!--<div class="new_html_code"></div>-->
               <div class="carousel-caption">
                 <p [innerText]="notify_list[i+1].notification"></p>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 new_html_code" *ngIf="!notify_list[i+1]" >
-              <!-- <img [src]="notify.img" alt="Random slide">
-              -->
-           <!--<div class="new_html_code"></div>-->
             <div class="carousel-caption">
               <p [innerText]="notify_list[0].notification"></p>
             </div>
           </div>
             </div>
-
           </ng-template>
         </ngb-carousel>
       </div>
     </div>
-
   </div>
 

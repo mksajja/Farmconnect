@@ -1,0 +1,27 @@
+.search-field
+{
+    height:50px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: beige;
+    margin-bottom: 10px;
+}
+.search-btn
+{
+    height: 50px;
+    background: #ffeb3b;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+
+}
+.search-btn:hover{
+    background: #ffc107;
+    cursor: pointer;
+}
+.form-box{
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+}

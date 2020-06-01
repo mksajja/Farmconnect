@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 export interface TradeElement {
   apicalls: string;
   action: string;
@@ -30,9 +29,32 @@ const TRADE_DATA: TradeElement[] = [
 export class TradeInfoTableComponent  {
   displayedColumns: string[] = ['apicalls', 'action', 'input', 'output'];
   dataSource = TRADE_DATA;
+  settings={
+    actions: {
+      add: false,
+      delete: false,
+      edit:false,
+      columnTitle: '', // minimize the actions column size
+    },
+    columns:{
+      apicalls:{
+        title: 'API Calls'
+      },
+      action:{
+        title: 'Action'
+      },
+      input:{
+        title: 'Input'
+      },
+      output:{
+        title: 'Output'
+      }
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+

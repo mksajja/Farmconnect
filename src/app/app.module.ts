@@ -10,7 +10,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TradeInfoTableComponent } from './trade-info-table/trade-info-table.component';
-import { MatTableModule } from '@angular/material/table'
+import { Ng2SmartTableModule } from 'ng2-smart-table'
 
 
 @NgModule({
@@ -27,7 +27,7 @@ import { MatTableModule } from '@angular/material/table'
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
-    MatTableModule,
+    Ng2SmartTableModule
 
   ],
   providers: [],
