@@ -17,7 +17,9 @@ ngb-carousel {
     left: 25%;
     bottom: 0%;
     top: 0%;
-    background-color: lightgrey;
+    background:rgba(0,0,0,0.5);
+    color:floralwhite;
+    /*background-color: lightgrey;*/
 }
 
 
@@ -30,7 +32,7 @@ div.new_html_code {
     max-height:150px;
     overflow:hidden;
     display:block;
-    background-color: #17a2b8;
+   /* background-color: #17a2b8;*/
   }
 
   @media(min-width:500px) and (max-width: 575px) {
@@ -41,6 +43,6 @@ div.new_html_code {
         max-height:150px;
         overflow:hidden;
         display:block;
-        background-color: #17a2b8;
+        /*background-color: #17a2b8;*/
       }
   }
