@@ -11,7 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TradeInfoTableComponent } from './trade-info-table/trade-info-table.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table'
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { Ng2SmartTableModule } from 'ng2-smart-table'
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    HttpClientModule
 
   ],
   providers: [],

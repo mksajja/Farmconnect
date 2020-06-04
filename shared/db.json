@@ -77,5 +77,47 @@
       "name": "Paint",
       "category": "paint"
     }
+  ],
+  "sellers": [
+    {
+      "id": 1,
+      "product": "Paddy",
+      "quantity": "80kgs",
+      "location": "Kumbalgodu"
+    },
+    {
+      "id": 2,
+      "product": "SugarCane",
+      "quantity": "150kgs",
+      "location": "Anekal"
+    },
+    {
+      "id": 3,
+      "product": "Corn",
+      "quantity": "100kgs",
+      "location": "Bommanahalli"
+    }
+
+  ],
+  "buyers": [
+    {
+      "id": 1,
+      "client": "Mohan",
+      "requiredQuantity": "20kgs",
+      "location": "Guntur"
+    },
+    {
+      "id": 2,
+      "client": "Praveen",
+      "requiredQuantity": "50kgs",
+      "location": "Machilipatnam"
+    },
+    {
+      "id": 3,
+      "client": "Kavya",
+      "requiredQuantity": "30kgs",
+      "location": "Vijayawada"
+    }
+
   ]
 }

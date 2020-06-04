@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { CommonService } from '../common.service';
 
 export interface TradeElement {
-  apicalls: string;
-  action: string;
-  input: string;
-  output: string;
+  id: string;
+  product: string;
+  quantity: string;
+  location: string;
 }
 
-const TRADE_DATA: TradeElement[] = [
-  {apicalls: 'Hydrogen', action: '1.0079', input: 'H',output:'1',},
-  {apicalls: 'Helium', action: '4.0026', input: 'He',output:'2'},
-  {apicalls: 'Lithium', action: '6.941', input: 'Li',output:'3'},
-  {apicalls: 'Beryllium', action: '9.0122', input: 'Be',output:'4'},
-  {apicalls: 'Boron', action: '10.811', input: 'B',output:'5'},
-  {apicalls: 'Carbon', action: '12.0107', input: 'C',output:'6'},
-  {apicalls: 'Nitrogen',action: '14.0067', input: 'N',output:'7'},
-  {apicalls: 'Oxygen', action: '15.9994', input: 'O',output:'8'},
-  {apicalls: 'Fluorine', action: '18.9984', input: 'F',output:'9'},
-  {apicalls: 'Neon', action: '20.1797', input: 'Ne',output:'10'},
-];
+// const TRADE_DATA: TradeElement[] = [
+//   {id: 'Hydrogen', product: '1.0079', quantity: 'H',location:'1',},
+//   {id: 'Helium', product: '4.0026', quantity: 'He',location:'2'},
+//   {id: 'Lithium', product: '6.941', quantity: 'Li',location:'3'},
+//   {id: 'Beryllium', product: '9.0122', quantity: 'Be',location:'4'},
+//   {id: 'Boron', product: '10.811', quantity: 'B',location:'5'},
+//   {id: 'Carbon', product: '12.0107', quantity: 'C',location:'6'},
+//   {id: 'Nitrogen',product: '14.0067', quantity: 'N',location:'7'},
+//   {id: 'Oxygen', product: '15.9994', quantity: 'O',location:'8'},
+//   {id: 'Fluorine', product: '18.9984', quantity: 'F',location:'9'},
+//   {id: 'Neon', product: '20.1797', quantity: 'Ne',location:'10'},
+// ];
 
 @Component({
   selector: 'app-trade-info-table',
@@ -27,34 +29,93 @@ const TRADE_DATA: TradeElement[] = [
 })
 
 export class TradeInfoTableComponent  {
-  displayedColumns: string[] = ['apicalls', 'action', 'input', 'output'];
-  dataSource = TRADE_DATA;
+  displayedColumns: string[] = ['id', 'product', 'quantity', 'location'];
+  dataSource: any;
+  dataSource1: any;
+  sellersData = [];
+ buyersData = [];
   settings={
     actions: {
       add: false,
       delete: false,
       edit:false,
-      columnTitle: '', // minimize the actions column size
+      columnTitle: '', // minimize the products column size
     },
     columns:{
-      apicalls:{
-        title: 'API Calls'
+      id:{
+        title: 'id'
       },
-      action:{
-        title: 'Action'
+      product:{
+        title: 'Product'
       },
-      input:{
-        title: 'Input'
+      quantity:{
+        title: 'Quantity'
       },
-      output:{
-        title: 'Output'
+      location:{
+        title: 'Location'
       }
     }
   }
-  constructor() { }
+  settings1={
+    actions: {
+      add: false,
+      delete: false,
+      edit:false,
+      columnTitle: '', // minimize the products column size
+    },
+    columns:{
+      id:{
+        title: 'id'
+      },
+      client:{
+        title: 'Client'
+      },
+      requiredQuantity:{
+        title: 'Required Quantity'
+      },
+      location:{
+        title: 'Location'
+      }
+    }
+  }
+  constructor(private httpClient:HttpClient,
+              private commonService:CommonService,
+             ) { }
 
   ngOnInit(): void {
+    this.getsellers();
+    this.getbuyers();
   }
 
+  getsellers(){
+    this.commonService.getData().subscribe(res =>{
+      console.log('res',res);
+      console.log('res.product',res[0].product);
+      for(let i = 0; i < res.length; i++){
+       this.sellersData.push(
+          {id: res[i].id, product: res[i].product, quantity: res[i].quantity, location: res[i].location}
+           );
+      }
+      this.dataSource = this.sellersData;
+      console.log('sellersData',this.sellersData);
+      console.log('dataSource',this.dataSource);
+    })
+  }
+
+  getbuyers(){
+    this.commonService.getBuyersData().subscribe(res =>{
+      console.log('res',res);
+      console.log('res.client',res[0].client);
+      for(let i = 0; i < res.length; i++){
+       this.buyersData.push(
+          {id: res[i].id, client: res[i].client, requiredQuantity: res[i].requiredQuantity, location: res[i].location}
+
+           );
+      }
+      this.dataSource1 = this.buyersData;
+      console.log('buyersData',this.buyersData);
+      console.log('dataSource1',this.dataSource1);
+    })
+  }
 }
 
