@@ -32,6 +32,8 @@ export class TradeInfoTableComponent  {
   displayedColumns: string[] = ['id', 'product', 'quantity', 'location'];
   dataSource: any;
   dataSource1: any;
+  sellers = true;
+  buyers = false;
   sellersData = [];
  buyersData = [];
   settings={
@@ -85,6 +87,7 @@ export class TradeInfoTableComponent  {
   ngOnInit(): void {
     this.getsellers();
     this.getbuyers();
+    this.getSearchData();
   }
 
   getsellers(){
@@ -115,6 +118,21 @@ export class TradeInfoTableComponent  {
       this.dataSource1 = this.buyersData;
       console.log('buyersData',this.buyersData);
       console.log('dataSource1',this.dataSource1);
+    })
+  }
+
+  getSearchData(){
+    this.commonService.getSearchData().subscribe(res => {
+      console.log('searchData', res);
+      console.log('res[res.length-1]',res[res.length-1].category);
+      if(res[res.length-1].category == "sell"){
+        this.sellers = true;
+        this.buyers = false;
+      }
+      else if(res[res.length-1].category == "buy"){
+        this.sellers = false;
+        this.buyers = true;
+      }
     })
   }
 }

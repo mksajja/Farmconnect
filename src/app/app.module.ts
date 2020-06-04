@@ -12,7 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TradeInfoTableComponent } from './trade-info-table/trade-info-table.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table'
 import {HttpClientModule} from '@angular/common/http';
-
+import { MatButtonModule } from  '@angular/material/button';
+import { MatListModule } from  '@angular/material/list';
+import { MatSidenavModule } from  '@angular/material/sidenav';
+import { MatIconModule } from  '@angular/material/icon';
+import { MatToolbarModule } from  '@angular/material/toolbar';
+import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,14 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
     Ng2SmartTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

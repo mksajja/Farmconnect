@@ -3,9 +3,9 @@
     height:50px;
     padding: 10px;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     outline: none;
-    background-color: beige;
+    background-color: floralwhite;
     margin-bottom: 10px;
 }
 .search-btn
@@ -25,3 +25,15 @@
     background: rgba(0,0,0,0.5);
     padding: 30px;
 }
+
+    @media(max-width:767px) {
+        .hide-link{display:none;}
+        }
+    @media(min-width:768px){
+        .hide-menu{display:none;}
+    }
+
+    .change-color:hover{
+         background-color: white;
+         color:black; ;
+    }

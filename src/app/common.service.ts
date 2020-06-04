@@ -21,4 +21,15 @@ export class CommonService {
 
     return this.httpClient.get<any>(url);
   }
+
+  search(searchData) {
+    const url = "http://localhost:3000/search"
+   return this.httpClient.post<any>(url, searchData);
+  }
+
+  getSearchData(){
+    const url = "http://localhost:3000/search"
+
+    return this.httpClient.get<any>(url);
+  }
 }

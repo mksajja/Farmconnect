@@ -1,66 +1,82 @@
 <div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top bg-info rounded">
-    <a class="navbar-brand" href="#">Farmers</a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Various Links</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link btn btn-secondary" style="margin: 4px;"> Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link btn btn-primary" style="margin: 4px;"> Login</a>
-      </li>
-    </ul>
-  </nav>
-
-<app-carousel></app-carousel>
- <div class="container-fluid">
-   <div class="row form-box">
-    <div class="col-sm-6">
-      <div class="row">
-
-
-          <div class="col-sm-6">
-              <select class="form-control search-field" id="tradeorproductcategory">
-              <option selected>Buy/Sell/Farm Equipment/Etc</option>
-              <option value="1">Buy</option>
-              <option value="2">Sell</option>
-              <option value="3">Farm Equipment</option>
-              <option value="4">Cold Storage</option>
-              </select>
-          </div>
-
-
-          <div class="col-sm-6">
-        <input type="text" class="form-control search-field" placeholder="Product Name " >
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <div class="col-lg-8 col-md-8 col-xs-2">
+      <button mat-icon-button class="hide-menu">
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <a class="navbar-brand" >Farmers</a>
+      <span class="menu-spacer"></span>
+        <a mat-button [routerLink]="'/about'" class="hide-link change-color"> About </a>
+        <a mat-button [routerLink]="'/various-links'" class="hide-link change-color"> Various Links </a>
       </div>
+      <div class="col-lg-4 col-md-4 col-xs-10" style="float: right;text-align: right;">
+        <a href="#" mat-button class="btn-light" style="margin:4px;"> Sign Up</a>
+        <a href="#" mat-button class="btn-primary"> Login</a>
+      </div>
+    </mat-toolbar-row>
 
-    </div>
-  </div>
-        <div class="col-lg-2 col-md-2 col-sm-2">
-          <input type="text" class="form-control search-field" placeholder="Location" >
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2">
-          <input type="number" name="distance" class="form-control search-field"  placeholder="Distance in KM" min="20" max="100">
-        </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2" >
-      <button type="submit" class="btn search-btn" style="width: 100%;padding-top: 5px;padding-bottom: 5px;">Search</button>
-    </div>
-     </div>
-    </div>
+  </mat-toolbar>
 
 
- <app-trade-info-table> </app-trade-info-table>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+
+        <a mat-list-item [routerLink]="'/about'"> About </a>
+        <a mat-list-item [routerLink]="'/various-links'"> Various Links </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div>
+        <app-carousel></app-carousel>
+        <div class="container-fluid">
+          <form [formGroup]="searchForm" (ngSubmit)=onSearch()>
+           <div class="row form-box">
+            
+            <div class="col-sm-6">
+              <div class="row">
+                  
+        
+                  <div class="col-sm-6 form-group">
+                      <select class="form-control search-field" formControlName="category">
+                      <option value="" disabled selected>Buy/Sell/Farm Equipment/Etc</option>
+                      <option value="buy">Buy</option>
+                      <option value="sell">Sell</option>
+                      <option value="farmEquipment">Farm Equipment</option>
+                      <option value="coldStorage">Cold Storage</option>
+                      </select>
+                  </div>
+        
+        
+                  <div class="col-sm-6 form-group">
+                <input type="text" class="form-control search-field" formControlName="product" placeholder="Product Name " >
+              </div>
+        
+            </div>
+          </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 form-group">
+                  <input type="text" class="form-control search-field" formControlName="location" placeholder="Location" >
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 form-group">
+                  <input type="number" name="distance" class="form-control search-field" formControlName="distance" placeholder="Distance in KM" min="20" max="100">
+                </div>
+        
+            <div class="col-lg-2 col-md-2 col-sm-2" >
+              <button type="submit" class="btn search-btn" style="width: 100%;padding-top: 5px;padding-bottom: 5px;">Search</button>
+            </div>
+             </div>
+          </form> 
+            </div>
+
+
+        <app-trade-info-table> </app-trade-info-table>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container> 
 
 </div>
-
-
-<router-outlet></router-outlet>

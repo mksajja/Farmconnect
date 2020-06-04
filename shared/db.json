@@ -97,7 +97,6 @@
       "quantity": "100kgs",
       "location": "Bommanahalli"
     }
-
   ],
   "buyers": [
     {
@@ -118,6 +117,35 @@
       "requiredQuantity": "30kgs",
       "location": "Vijayawada"
     }
-
+  ],
+  "search": [
+    {
+      "category": "buy",
+      "product": "gdfg",
+      "location": "tret",
+      "distance": "",
+      "id": 1
+    },
+    {
+      "category": "farmEquipment",
+      "product": "ghgfh",
+      "location": "rtetr",
+      "distance": 20,
+      "id": 2
+    },
+    {
+      "category": "buy",
+      "product": "wheat",
+      "location": "vijayawada",
+      "distance": 20,
+      "id": 3
+    },
+    {
+      "category": "sell",
+      "product": "gdf",
+      "location": "gdfg",
+      "distance": 20,
+      "id": 4
+    }
   ]
 }
