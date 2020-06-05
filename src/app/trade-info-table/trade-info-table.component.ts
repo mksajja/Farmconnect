@@ -32,6 +32,7 @@ export class TradeInfoTableComponent  {
   displayedColumns: string[] = ['id', 'product', 'quantity', 'location'];
   dataSource: any;
   dataSource1: any;
+  category: string;
   sellers = true;
   buyers = false;
   sellersData = [];
@@ -87,7 +88,14 @@ export class TradeInfoTableComponent  {
   ngOnInit(): void {
     this.getsellers();
     this.getbuyers();
-    this.getSearchData();
+   
+    this.commonService.cast.subscribe(category => {
+      this.category = category;
+      console.log('this.category',this.category);
+      this.getSearchData();
+    }
+    );
+   
   }
 
   getsellers(){
@@ -122,18 +130,27 @@ export class TradeInfoTableComponent  {
   }
 
   getSearchData(){
-    this.commonService.getSearchData().subscribe(res => {
-      console.log('searchData', res);
-      console.log('res[res.length-1]',res[res.length-1].category);
-      if(res[res.length-1].category == "sell"){
-        this.sellers = true;
-        this.buyers = false;
-      }
-      else if(res[res.length-1].category == "buy"){
-        this.sellers = false;
-        this.buyers = true;
-      }
-    })
+    // this.commonService.getSearchData().subscribe(res => {
+    //   console.log('searchData', res);
+    //   console.log('categorySelected',res[0].category);
+    //   if(res[res.length-1].category == "sell"){
+    //     this.sellers = true;
+    //     this.buyers = false;
+    //   }
+    //   else if(res[res.length-1].category == "buy"){
+    //     this.sellers = false;
+    //     this.buyers = true;
+    //   }
+    // })
+ 
+console.log('this.categorySearchMethod',this.category);
+  if(this.category == "sell"){
+    this.sellers = true;
+    this.buyers = false;
   }
+  else if(this.category == "buy"){
+    this.sellers = false;
+    this.buyers = true;
+  }
+ }
 }
-

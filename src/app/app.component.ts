@@ -26,9 +26,11 @@ export class AppComponent implements OnInit {
   }
   onSearch(){
     console.log('searchForm Controls',this.searchForm.value);
+    console.log('form.category',this.searchForm.value.category);
     this.commonService.search(this.searchForm.value).subscribe(
       response => console.log('Success!', response),
       error =>console.log('Error!', error)
     );
+   this.commonService.editSearch(this.searchForm.value.category); 
   }
 }

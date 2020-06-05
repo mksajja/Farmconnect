@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
+
+  private category = new BehaviorSubject<string>('');
+  cast = this.category.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,13 +26,19 @@ export class CommonService {
   }
 
   search(searchData) {
-    const url = "http://localhost:3000/search"
-   return this.httpClient.post<any>(url, searchData);
+    const url = "http://localhost:3000/search/1"
+   return this.httpClient.put(url, searchData);
   }
 
   getSearchData(){
     const url = "http://localhost:3000/search"
 
     return this.httpClient.get<any>(url);
+  }
+
+  editSearch(newCategory) {
+    this.category.next(newCategory);
+    console.log('newCategory',newCategory);
+    console.log('categoryCast',this.category);
   }
 }
