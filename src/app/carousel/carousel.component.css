@@ -46,3 +46,42 @@ div.new_html_code {
         /*background-color: #17a2b8;*/
       }
   }
+
+  @media(max-width:320px){
+    div.new_html_code{
+      min-height: 150px;
+      max-width: 160px;
+      min-width: 0px;
+      max-height: 150px;
+      overflow: hidden;
+      display: block;
+    }
+}
+  @media(min-width:321px) and (max-width:360px){
+      div.new_html_code{
+        min-height: 150px;
+        max-width: 180px;
+        max-height: 150px;
+        overflow: hidden;
+        display: block;
+      }
+  }
+
+  @media(min-width:361px) and (max-width:375px){
+    div.new_html_code{
+      min-height: 150px;
+      max-width: 187px;
+      max-height: 150px;
+      overflow: hidden;
+      display: block;
+    }
+}
+@media(min-width:376px) and (max-width:414px){
+    div.new_html_code{
+      min-height: 150px;
+      max-width: 205px;
+      max-height: 150px;
+      overflow: hidden;
+      display: block;
+    }
+}
