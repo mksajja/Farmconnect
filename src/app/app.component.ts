@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
-import { CommonService } from './common.service';
 
 @Component({
   selector: 'app-root',
@@ -9,28 +7,13 @@ import { CommonService } from './common.service';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  searchForm: FormGroup;
-  submitted = false;
+  
 
 
-  constructor(private fb: FormBuilder,
-              private commonService:CommonService){}
+  constructor(){}
 
   ngOnInit(){
-    this.searchForm = this.fb.group({
-      category: [''],
-      product: [''],
-      location: [''],
-      distance: ['']
-    })
+   
   }
-  onSearch(){
-    console.log('searchForm Controls',this.searchForm.value);
-    console.log('form.category',this.searchForm.value.category);
-    this.commonService.search(this.searchForm.value).subscribe(
-      response => console.log('Success!', response),
-      error =>console.log('Error!', error)
-    );
-   this.commonService.editSearch(this.searchForm.value.category); 
-  }
+
 }

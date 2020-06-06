@@ -19,11 +19,17 @@ import { MatIconModule } from  '@angular/material/icon';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     CarouselComponent,
-    TradeInfoTableComponent
+    TradeInfoTableComponent,
+    SignupComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
