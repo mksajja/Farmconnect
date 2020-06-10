@@ -22,6 +22,13 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MatStepperModule } from '@angular/material/stepper';
+// import { AgmCoreModule } from '@agm/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule } from '@angular/material/radio';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +54,17 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatRadioModule,
+    GooglePlaceModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyCjixbVpbpMv0WgmLlNmAN_r0rg88P45o0',
+    //   libraries: ['places']
+    // })
 
   ],
   providers: [],

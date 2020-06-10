@@ -53,13 +53,26 @@
 
 
                     <div class="col-sm-6 form-group">
-                  <input type="text" class="form-control search-field" formControlName="product" placeholder="Product Name " >
+                  <!-- <input type="text" class="form-control search-field" formControlName="product" placeholder="Product Name " > -->
+                  <input type="text" formControlName="product"
+                           placeholder="Product Name"
+                           aria-label="Number" class="form-control search-field"
+                           matInput search-field
+                           [formControl]="myControl"
+                           [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
                 </div>
 
               </div>
             </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 form-group">
-                    <input type="text" class="form-control search-field" formControlName="location" placeholder="Location" >
+                    <!-- <input type="text" class="form-control search-field" formControlName="location" placeholder="Location" > -->
+                    <!-- <input type="text" class="form-control search-field" (keydown.enter)="$event.preventDefault()" formControlName="location" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search> -->
+                    <input class="form-control search-field" formControlName="location" placeholder="Location" ngx-google-places-autocomplete [options]='optionsLocation' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 form-group">
                     <input type="number" name="distance" class="form-control search-field" formControlName="distance" placeholder="Distance in KM" min="20" max="100">
