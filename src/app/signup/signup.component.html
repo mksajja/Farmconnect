@@ -1,1 +1,90 @@
-<p>signup works!</p>
+<mat-horizontal-stepper labelposition="bottom">
+
+    <mat-step [stepControl]="roleFormGroup">
+        <form [formGroup]="roleFormGroup">
+            <ng-template matStepLabel>Role</ng-template>
+            <mat-radio-group class="example-radio-group" formControlName="role">
+                <mat-radio-button class="example-radio-button" value="farmer">Farmer</mat-radio-button>
+                <mat-radio-button class="example-radio-button" value="buyer">Buyer</mat-radio-button>
+                <mat-radio-button class="example-radio-button" value="agent">Agent</mat-radio-button>
+                <mat-radio-button class="example-radio-button" value="equipmentprovider">Equipment Provider</mat-radio-button>
+            </mat-radio-group>
+
+        <div>
+            <button mat-button matStepperNext>Next </button>
+        </div>
+    </form>
+    </mat-step>
+    <mat-step [stepControl]="basicDataFormGroup">
+        <form [formGroup]="basicDataFormGroup">
+        <ng-template matStepLabel>Basic Data</ng-template>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+
+            <input matInput placeholder="Last Name" formControlName="lastName" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width"appearance="fill" >
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Street</mat-label>
+
+            <input matInput placeholder="Street" formControlName="street" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+
+            <input matInput placeholder="City" formControlName="city" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>State</mat-label>
+
+            <input matInput placeholder="State" formControlName="state" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Pincode</mat-label>
+
+            <input matInput placeholder="PinCode" formControlName="pinCode" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label for="mobileNumber">Mobile Number</mat-label>
+
+            <input matInput  formControlName="mobileNumber" id="mobileNumber"  type="text" required>
+
+            <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class="alert alert-danger">
+
+                <div *ngIf="f.mobileNumber.errors.required">Mobile Number is required.</div>
+
+                <div *ngIf="f.mobileNumber.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
+
+            </div>
+        </mat-form-field>
+
+        <div>
+            <button mat-button matStepperPrevious>Previous </button>
+            <button mat-button matStepperNext>Next </button>
+        </div>
+        </form>
+    </mat-step>
+
+
+
+    <mat-step>
+        <ng-template matStepLabel>List of Data</ng-template>
+        <p>step 3</p>
+        <button mat-button matStepperPrevious>Previous </button>
+        <button mat-button matStepperNext>Next </button>
+    </mat-step>
+    <mat-step label="Done">
+        <p>step 4</p>
+        <button mat-button matStepperPrevious>Previous </button>
+    </mat-step>
+</mat-horizontal-stepper>

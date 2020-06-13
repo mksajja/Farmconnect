@@ -45,6 +45,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatNativeDateModule} from '@angular/material/core';
 // import { MatMomentDateModule } from "@angular/material-moment-adapter";
 
+import { MatStepperModule } from '@angular/material/stepper';
+// import { AgmCoreModule } from '@agm/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule } from '@angular/material/radio';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +84,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     IgxButtonModule,
 		IgxIconModule,
 		IgxLayoutModule,
@@ -91,6 +99,19 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
     // MatMomentDateModule
+=======
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatRadioModule,
+    GooglePlaceModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyCjixbVpbpMv0WgmLlNmAN_r0rg88P45o0',
+    //   libraries: ['places']
+    // })
+
+>>>>>>> 79dbc32bf50b5c7f4a4861c8976418a6968f5842
   ],
   providers: [],
   bootstrap: [AppComponent]

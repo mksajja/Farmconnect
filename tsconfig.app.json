@@ -5,6 +5,7 @@
     "types": [
       "hammerjs"
     ]
+    "types": [  ]
   },
   "files": [
     "src/main.ts",
