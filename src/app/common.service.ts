@@ -41,4 +41,8 @@ export class CommonService {
     console.log('newCategory',newCategory);
     console.log('categoryCast',this.category);
   }
+  getfarmerTable(){
+    const url = "http://localhost:3000/farmerTable"
+    return this.httpClient.get<any>(url);
+  }
 }

@@ -1,0 +1,52 @@
+<h2>Farmer Edit Form</h2>
+<!-- <div class="row">
+    <div class="col-45">
+        <mat-form-field appearance="outline">
+            <mat-label>Expected Price</mat-label>
+            <input matInput placeholder="Placeholder">
+           </mat-form-field>
+    </div>
+    <div class="col-10"></div>
+    <div class="col-45">
+        <mat-form-field appearance="outline">
+            <mat-label>Expected Yield</mat-label>
+            <input matInput placeholder="Placeholder">
+              </mat-form-field>
+    </div>
+</div> -->
+
+<div class="row">
+   
+        <mat-form-field appearance="outline" class="matFormWidth">
+            <mat-label>Expected Price</mat-label>
+            <input matInput placeholder="Placeholder" [value]="elementData?.expectedPrice === null? 0:elementData?.expectedPrice">
+            <!-- <span *ngIf="elementData.expectedPrice? === elementData.expectedPrice: null"></span> -->
+           </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="matFormWidth">
+            <mat-label>Expected Yield</mat-label>
+            <input matInput placeholder="Placeholder" [value]="elementData?.expectedYield === null? 0:elementData?.expectedYield">
+              </mat-form-field>
+   
+</div>
+
+<div class="row">
+    
+    <mat-form-field appearance="outline" class="matFormWidth">
+        <mat-label>	Expected Yield Date</mat-label>
+        <input matInput [matDatepicker]="picker" [value]="elementData?.expectedYieldDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+</div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="matFormWidth">
+            <mat-label>	Minimum Quantity of Purchase</mat-label>
+            <input matInput placeholder="Placeholder" [value]="elementData?.MinQtyPurchase === null? 0:elementData?.MinQtyPurchase">
+              </mat-form-field>
+    </div>
+
+   
+
+<button mat-raised-button  color="primary" (click)="closeFarmerEdit()">Update</button>

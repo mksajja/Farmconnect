@@ -1,0 +1,105 @@
+.content-wrap {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    overflow: auto;
+    padding: 16px;
+    width: 100%;
+}
+/* .main {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main > * {
+    width: 100%;
+} */
+:host {
+    display: block;
+    height: 100%;
+}
+ .h1 {
+    font-size: 1.5rem;
+}
+#navbar {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+#sidebar {
+    position: fixed;
+    margin-top: 76px;
+    overflow: auto;
+   }
+table {
+    width: 100%;
+  }
+  .marBtn {
+      margin-right: 15px;
+  }
+ /* #main{
+     width: 100%;
+ }  */
+ /* .sidebar {
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-top: 58px;
+    margin-left: 1px;;
+  } */
+  /* div.content {
+    margin-left: 202px;
+    padding: 1px 16px;
+    height: 1000px;
+    margin-top: 58px;
+    width: 100%;
+  } */
+
+
+
+
+
+
+
+  /* .sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+   overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 58px;
+  }
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+.mySidenav{
+    width: 0px;
+}
+.main2 {
+    margin-left: 0px;
+}
+.marg {
+    margin-left: 200px;
+} */

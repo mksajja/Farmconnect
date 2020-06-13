@@ -126,5 +126,17 @@
       "distance": "",
       "id": 1
     }
+  ],
+  "farmerTable": [
+    {"id": 1, "expectedPrice": 1500, "expectedYield": "40kgs", "expectedYieldDate": "4/05/2020","MinQtyPurchase": "20kgs"},
+    {"id": 2, "expectedPrice": 1300, "expectedYield": "70kgs", "expectedYieldDate": "4/16/2020","MinQtyPurchase": "20kgs"},
+    {"id": 3, "expectedPrice": 1400, "expectedYield": "80kgs", "expectedYieldDate": "6/07/2020","MinQtyPurchase": "20kgs"},
+    {"id": 4, "expectedPrice": 3400, "expectedYield": "40kgs", "expectedYieldDate": "12/15/2020","MinQtyPurchase": "20kgs"},
+    {"id": 5, "expectedPrice": 2000, "expectedYield": "50kgs", "expectedYieldDate": "11/11/2020","MinQtyPurchase": "20kgs"},
+    {"id": 6, "expectedPrice": 2500, "expectedYield": "75kgs", "expectedYieldDate": "2/06/2020","MinQtyPurchase": "20kgs"},
+    {"id": 7, "expectedPrice": 3000, "expectedYield": "66kgs", "expectedYieldDate": "10/23/2020","MinQtyPurchase": "20kgs"},
+    {"id": 8, "expectedPrice": 4500, "expectedYield": "54kgs", "expectedYieldDate": "9/12/2020","MinQtyPurchase": "20kgs"},
+    {"id": 9, "expectedPrice": 5000, "expectedYield": "90kgs", "expectedYieldDate": "5/25/2020","MinQtyPurchase": "20kgs"},
+    {"id": 10, "expectedPrice": 7000, "expectedYield": "95kgs", "expectedYieldDate": "6/06/2020","MinQtyPurchase": "20kgs"}
   ]
 }
