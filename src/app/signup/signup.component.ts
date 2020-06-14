@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators,FormControl} from '@angular/forms';
 
+interface DocumentType {
+  name: string;
+}
+interface Crop{
+  name: string;
+}
 
 
 @Component({
@@ -8,6 +14,9 @@ import { FormGroup, FormBuilder, Validators,FormControl} from '@angular/forms';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
+
+
 export class SignupComponent implements OnInit {
 
   basicDataFormGroup:FormGroup;
@@ -24,17 +33,35 @@ export class SignupComponent implements OnInit {
       city:['',Validators.required],
       state:['',Validators.required],
       pinCode:['',Validators.required],
-      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
+      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      documentType:['',Validators.required],
+      documentNumber:['',Validators.required],
+      licenseInfo:['',Validators.required],
 
     })
 
     this.roleFormGroup = this.fb.group({
       role:['',Validators.required]
     })
+    this.listDataFormGroup=this.fb.group({
+      crop:['',Validators.required],
+    })
   }
-email=new FormControl('', [Validators.required, Validators.email]);
-
-
+email = new FormControl('', [Validators.required, Validators.email]);
+documentType = new FormControl('', Validators.required);
+crop = new FormControl('',Validators.required);
+farmerDocuments: DocumentType[] = [
+  {name: 'Pancard'},
+  {name: 'Passbook'},
+];
+buyerDocuments: DocumentType[] = [
+  {name: 'Pancard'},
+  {name: 'APMC'},
+];
+crops: Crop[] = [
+  {name:'Tomato'},
+  {name:'Mango'},
+];
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -51,5 +78,7 @@ email=new FormControl('', [Validators.required, Validators.email]);
   submit(){
     console.log(this.basicDataFormGroup.value);
   }
+
+
 
 }

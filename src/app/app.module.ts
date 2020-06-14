@@ -51,6 +51,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatRadioModule } from '@angular/material/radio';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,6 +104,7 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     MatAutocompleteModule,
     MatRadioModule,
     GooglePlaceModule,
+    MatSelectModule,
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyCjixbVpbpMv0WgmLlNmAN_r0rg88P45o0',
     //   libraries: ['places']

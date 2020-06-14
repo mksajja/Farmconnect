@@ -3,12 +3,49 @@
     <mat-step [stepControl]="roleFormGroup">
         <form [formGroup]="roleFormGroup">
             <ng-template matStepLabel>Role</ng-template>
+            <div class="container">
             <mat-radio-group class="example-radio-group" formControlName="role">
-                <mat-radio-button class="example-radio-button" value="farmer">Farmer</mat-radio-button>
-                <mat-radio-button class="example-radio-button" value="buyer">Buyer</mat-radio-button>
-                <mat-radio-button class="example-radio-button" value="agent">Agent</mat-radio-button>
-                <mat-radio-button class="example-radio-button" value="equipmentprovider">Equipment Provider</mat-radio-button>
-            </mat-radio-group>
+
+    <div class="row">
+    <div class="col-md-2 col-sm-3 text-center">
+        <label class=" ">
+            <img class="img-responsive" src="assets/images/clipart2403197.png" style="
+            width: 80px;height:150px;
+        "/>
+            <mat-radio-button  value="farmer" >Farmer</mat-radio-button>
+
+        </label>
+    </div>
+<div class="col-md-2 col-sm-3 text-center">
+    <label class="">
+        <img class="img-responsive" src="assets/images/PngItem_1613927.png" style="
+            width: 80px;height:141px;
+        "/>
+        <mat-radio-button class="example-radio-button" value="buyer">Buyer</mat-radio-button>
+    </label>
+</div>
+<div class="col-md-2 col-sm-3 text-center">
+    <label class="">
+        <img class="img-responsive" src="assets/images/PinClipart.com_customer-service-pictures-clip_3899804.png" style="
+            width: 80px; height:141px;
+        "/>
+        <mat-radio-button class="example-radio-button" value="agent">Agent</mat-radio-button>
+    </label>
+</div>
+<div class="col-md-2 col-sm-3 text-center">
+    <label class="">
+        <img class="img-responsive" src="assets/images/pngwing.com.png" style="
+            width: 80px;height:141px;
+        "/>
+        <mat-radio-button class="example-radio-button" value="equipmentProvider">Equipment Provider</mat-radio-button>
+    </label>
+</div>
+</div>
+
+
+                         </mat-radio-group>
+</div>
+
 
         <div>
             <button mat-button matStepperNext>Next </button>
@@ -67,6 +104,38 @@
 
             </div>
         </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Document Type</mat-label>
+            <mat-select formControlName="documentType" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let farmerDocument of farmerDocuments" [value]="farmerDocument">
+                  {{farmerDocument.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="documentType.hasError('required')">Please choose an document</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Document Number</mat-label>
+            <input matInput placeholder="Document Number" formControlName="documentNumber" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Document Type</mat-label>
+            <mat-select formControlName="documentType"  required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let buyerDocument of buyerDocuments" [value]="buyerDocument">
+                  {{buyerDocument.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="documentType.hasError('required')">Please choose an document</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Document Number</mat-label>
+            <input matInput placeholder="Document Number" formControlName="documentNumber" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>License Info</mat-label>
+            <input matInput placeholder="License Info" formControlName="licenseInfo" required>
+        </mat-form-field>
 
         <div>
             <button mat-button matStepperPrevious>Previous </button>
@@ -77,11 +146,24 @@
 
 
 
-    <mat-step>
+    <mat-step [stepControl]="listDataFormGroup">
+        <form [formGroup]="listDataFormGroup">
         <ng-template matStepLabel>List of Data</ng-template>
-        <p>step 3</p>
-        <button mat-button matStepperPrevious>Previous </button>
+        <mat-form-field appearance="fill">
+            <mat-label>Crop Selection</mat-label>
+            <mat-select formControlName="crop" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let crop of crops" [value]="crop">
+                  {{crop.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="crop.hasError('required')">Please choose a crop</mat-error>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Previous </button>
         <button mat-button matStepperNext>Next </button>
+        </div>
+    </form>
     </mat-step>
     <mat-step label="Done">
         <p>step 4</p>
