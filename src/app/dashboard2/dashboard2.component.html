@@ -7,7 +7,7 @@
     </igx-navbar>
 </div>
 
- <div class="content-wrap" igxLayout id="sidebar"> 
+ <!-- <div class="content-wrap" igxLayout id="sidebar"> 
     <igx-nav-drawer id="navigation" [pin]="true" [pinThreshold]="0" >
       <ng-template igxDrawer>
           <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
@@ -134,7 +134,132 @@
       </table>
     </div>  
     </main>
-  </div> 
+  </div>  -->
+
+  <div class="content-wrap" igxLayout id="sidebar">
+    <igx-nav-drawer id="navigation" #drawer [isOpen]="true" [pin]="true" [pinThreshold]="0">
+      <ng-template igxDrawer>
+        <nav>
+          <span igxDrawerItem [isHeader]="true">Components</span>
+
+          <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
+            <igx-icon fontSet="material">{{ item.name }}</igx-icon>
+            <span>{{ item.text }}</span>
+          </span>
+        </nav>
+      </ng-template>
+    </igx-nav-drawer>
+
+    <main >
+     
+      <span igxButton="icon" igxToggleAction="navigation">
+        <igx-icon fontSet="material">menu</igx-icon>
+      </span>
+
+      <table *ngIf="farmer" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+       
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="expectedPrice">
+          <th mat-header-cell *matHeaderCellDef> Expected Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.expectedPrice}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="expectedYield">
+          <th mat-header-cell *matHeaderCellDef> Expected Yield </th>
+          <td mat-cell *matCellDef="let element"> {{element.expectedYield}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="expectedYieldDate">
+          <th mat-header-cell *matHeaderCellDef>Expected Yield Date</th>
+          <td mat-cell *matCellDef="let element"> {{element.expectedYieldDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="MinQtyPurchase">
+          <th mat-header-cell *matHeaderCellDef>Minimum Quantity of Purchase</th>
+          <td mat-cell *matCellDef="let element"> {{element.MinQtyPurchase}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button class="marBtn" color="primary" (click)="openEditFarmer(element)">Edit</button>
+            <button mat-raised-button color="warn" (click)="deleteRowFarmerTable(element)">Delete</button>
+          </td>
+        </ng-container> 
+           
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <table *ngIf="agent" mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+       
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="cropsHandling">
+          <th mat-header-cell *matHeaderCellDef> Crops Handling </th>
+          <td mat-cell *matCellDef="let element"> {{element.cropsHandling}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="rating">
+          <th mat-header-cell *matHeaderCellDef> Rating </th>
+          <td mat-cell *matCellDef="let element"> {{element.rating}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="images">
+          <th mat-header-cell *matHeaderCellDef>Images</th>
+          <td mat-cell *matCellDef="let element"> <img [src]="element.images"  width="100" height="50" />  </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+      </table>
+
+      <table *ngIf="transporter" mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
+
+       
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="availableVehicles">
+          <th mat-header-cell *matHeaderCellDef>Available Vehicles </th>
+          <td mat-cell *matCellDef="let element"> {{element.availableVehicles}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef>Address</th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
+      </table>
+    </main>
+  </div>
 
 
  

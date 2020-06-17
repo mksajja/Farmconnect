@@ -5,9 +5,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-.h1, h1 {
+
+/* .h1, h1 {
     font-size: 1.5rem;
 }
 .igx-navbar {
     position: fixed;
 }
+.fa, .fas {
+    font-weight: 900;
+}
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+} */
