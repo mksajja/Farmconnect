@@ -8,7 +8,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
 
 const routes: Routes = [
   {path: 'home', component:HomeComponent},
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '',   redirectTo: 'home', pathMatch: 'full' },
   {path:'signup', component:SignupComponent},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
