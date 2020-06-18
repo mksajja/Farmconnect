@@ -7,35 +7,35 @@
             <mat-radio-group class="example-radio-group" formControlName="role">
 
     <div class="row">
-    <div class="col-md-2 col-sm-3 text-center">
+    <div class="col-md-3 col-sm-3 text-center">
         <label class=" ">
-            <img class="img-responsive" src="assets/images/clipart2403197.png" style="
-            width: 80px;height:150px;
+            <img class="img-responsive" src="assets/images/75-751142_farmer-png-transparent-image-farmer-images-png.png" style="
+            width: 177px;height:150px;
         "/>
             <mat-radio-button  value="farmer" >Farmer</mat-radio-button>
 
         </label>
     </div>
-<div class="col-md-2 col-sm-3 text-center">
+<div class="col-md-3 col-sm-3 text-center">
     <label class="">
-        <img class="img-responsive" src="assets/images/PngItem_1613927.png" style="
-            width: 80px;height:141px;
+        <img class="img-responsive" src="assets/images/CropBuyer.png" style="
+            width: 177px;height:141px;
         "/>
         <mat-radio-button class="example-radio-button" value="buyer">Buyer</mat-radio-button>
     </label>
 </div>
-<div class="col-md-2 col-sm-3 text-center">
+<div class="col-md-3 col-sm-3 text-center">
     <label class="">
-        <img class="img-responsive" src="assets/images/PinClipart.com_customer-service-pictures-clip_3899804.png" style="
-            width: 80px; height:141px;
+        <img class="img-responsive" src="assets/images/agent.png" style="
+            width: 177px; height:141px;
         "/>
         <mat-radio-button class="example-radio-button" value="agent">Agent</mat-radio-button>
     </label>
 </div>
-<div class="col-md-2 col-sm-3 text-center">
+<div class="col-md-3 col-sm-3 text-center">
     <label class="">
-        <img class="img-responsive" src="assets/images/pngwing.com.png" style="
-            width: 80px;height:141px;
+        <img class="img-responsive" src="assets/images/kisspng-tractor-agriculture-farm-cartoon-illustration-cartoon-illustration-farm-tractor-planting-5a80d97741c984.2100376415183937192695.png" style="
+            width: 177px;height:141px;
         "/>
         <mat-radio-button class="example-radio-button" value="equipmentProvider">Equipment Provider</mat-radio-button>
     </label>
@@ -56,42 +56,75 @@
         <form [formGroup]="basicDataFormGroup">
         <ng-template matStepLabel>Basic Data</ng-template>
 
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="col-md-3 example-full-width" appearance="fill">
             <mat-label>First Name</mat-label>
             <input matInput placeholder="First Name" formControlName="firstName" required>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="col-md-3 example-full-width" appearance="fill">
             <mat-label>Last Name</mat-label>
 
             <input matInput placeholder="Last Name" formControlName="lastName" required>
         </mat-form-field>
-        <mat-form-field class="example-full-width"appearance="fill" >
+        <mat-form-field class="col-md-3 example-full-width"appearance="fill" >
             <mat-label>Enter your email</mat-label>
             <input matInput placeholder="pat@example.com" [formControl]="email" required>
             <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>Street</mat-label>
 
             <input matInput placeholder="Street" formControlName="street" required>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>City</mat-label>
 
             <input matInput placeholder="City" formControlName="city" required>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>State</mat-label>
 
             <input matInput placeholder="State" formControlName="state" required>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>Pincode</mat-label>
 
             <input matInput placeholder="PinCode" formControlName="pinCode" required>
         </mat-form-field>
-        <mat-form-field appearance="fill" >
+
+        <mat-form-field class="col-md-3" appearance="fill">
+            <mat-label>Document Type</mat-label>
+            <mat-select formControlName="documentType" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let farmerDocument of farmerDocuments" [value]="farmerDocument">
+                  {{farmerDocument.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="documentType.hasError('required')">Please choose an document</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-3" appearance="fill">
+            <mat-label>Document Number</mat-label>
+            <input matInput placeholder="Document Number" formControlName="documentNumber" required>
+        </mat-form-field>
+        <mat-form-field class="col-md-3" appearance="fill">
+            <mat-label>Document Type</mat-label>
+            <mat-select formControlName="documentType"  required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let buyerDocument of buyerDocuments" [value]="buyerDocument">
+                  {{buyerDocument.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="documentType.hasError('required')">Please choose an document</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-3" appearance="fill">
+            <mat-label>Document Number</mat-label>
+            <input matInput placeholder="Document Number" formControlName="documentNumber" required>
+        </mat-form-field>
+        <mat-form-field class="col-md-3" appearance="fill">
+            <mat-label>License Info</mat-label>
+            <input matInput placeholder="License Info" formControlName="licenseInfo" required>
+        </mat-form-field>
+        <mat-form-field class="col-md-3" appearance="fill" >
             <mat-label for="mobileNumber">Mobile Number</mat-label>
 
             <input matInput  formControlName="mobileNumber" id="mobileNumber"  type="text" required>
@@ -103,38 +136,6 @@
                 <div *ngIf="f.mobileNumber.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
 
             </div>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Document Type</mat-label>
-            <mat-select formControlName="documentType" required>
-                <mat-option>--</mat-option>
-                <mat-option *ngFor="let farmerDocument of farmerDocuments" [value]="farmerDocument">
-                  {{farmerDocument.name}}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="documentType.hasError('required')">Please choose an document</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Document Number</mat-label>
-            <input matInput placeholder="Document Number" formControlName="documentNumber" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Document Type</mat-label>
-            <mat-select formControlName="documentType"  required>
-                <mat-option>--</mat-option>
-                <mat-option *ngFor="let buyerDocument of buyerDocuments" [value]="buyerDocument">
-                  {{buyerDocument.name}}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="documentType.hasError('required')">Please choose an document</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Document Number</mat-label>
-            <input matInput placeholder="Document Number" formControlName="documentNumber" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>License Info</mat-label>
-            <input matInput placeholder="License Info" formControlName="licenseInfo" required>
         </mat-form-field>
 
         <div>
