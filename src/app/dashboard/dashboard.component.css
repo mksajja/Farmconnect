@@ -479,6 +479,11 @@ dl, ol, ul {
     border-radius: .35rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
 [type=button], [type=reset], [type=submit], button {
     -webkit-appearance: button;
 }

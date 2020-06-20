@@ -125,7 +125,7 @@
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"  style=""> 
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Custom Components:</h6>
-                  <a class="collapse-item" [routerLink]="'/dashboard'">Post</a>
+                  <a class="collapse-item" [routerLink]="'/farmerpost-form'" (click)="onFarmerPost()">Post</a>
                   <a class="collapse-item" [routerLink]="'/dashboard'" >Check Response</a>
                 </div>
               </div>
@@ -391,7 +391,9 @@
 
            
            <div class="container-fluid">
-
+            <div *ngIf="route"><app-farmerpost-form></app-farmerpost-form></div>
+ 
+           <div *ngIf="dashboard">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
               <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -415,7 +417,7 @@
                       </div> -->
                     </div>
                     <div class="row no-gutters align-items-center">
-                      <img class="img-responsive" style="width: 260px; height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdqPkakW9SdbooWFt5xxgpgIF2luscMdD7b6j_wQQbYfx7y9x9&usqp=CAU" alt="Photo of a Shiba Inu">
+                      <img  class="img-thumbnail rounded"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdqPkakW9SdbooWFt5xxgpgIF2luscMdD7b6j_wQQbYfx7y9x9&usqp=CAU" alt="Photo of a Shiba Inu">
                     </div>
                     <div class="row no-gutters align-items-center" style="padding-top: 0.5rem;">
                       <div class="col-12 col-md-6">
@@ -445,7 +447,7 @@
                       </div> -->
                     </div>
                     <div class="row no-gutters align-items-center">
-                      <img style="width: 260px; height: 200px;" src="https://i.ytimg.com/vi/u94iAWIU_6Q/maxresdefault.jpg" alt="Photo of a Shiba Inu">
+                      <img  class="img-thumbnail rounded"  src="https://cdn.britannica.com/36/167236-050-BF90337E/Ears-corn.jpg" alt="Photo of a Shiba Inu">
                     </div>
                     <div class="row no-gutters align-items-center" style="padding-top: 0.5rem;">
                       <div class="col-12 col-md-6">
@@ -475,7 +477,7 @@
                       </div> -->
                     </div>
                     <div class="row no-gutters align-items-center">
-                      <img style="width: 260px; height: 200px;" src="https://www.kisaanhelpline.com/product_image/bajra-4.jpg" alt="Photo of a Shiba Inu">
+                      <img  class="img-thumbnail rounded" src="https://www.kisaanhelpline.com/product_image/bajra-4.jpg" alt="Photo of a Shiba Inu">
                     </div>
                     <div class="row no-gutters align-items-center" style="padding-top: 0.5rem;">
                       <div class="col-12 col-md-6">
@@ -505,7 +507,7 @@
                       </div> -->
                     </div>
                     <div class="row no-gutters align-items-center">
-                      <img style="width: 260px; height: 200px" src="https://www.apnikheti.com/upload/crops/5252idea99wheat-863392_960_720.jpg" alt="Photo of a Shiba Inu">
+                      <img  class="img-thumbnail rounded" src="https://www.apnikheti.com/upload/crops/5252idea99wheat-863392_960_720.jpg" alt="Photo of a Shiba Inu">
                     </div>
                     <div class="row no-gutters align-items-center" style="padding-top: 0.5rem;">
                       <div class="col-12 col-md-6">
@@ -525,7 +527,7 @@
            
   
           </div>
-    
+        </div>
 
         </div>
       </div>

@@ -7,10 +7,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class DashboardComponent implements OnInit {
-
+  dashboard;
+  route;
   constructor() { }
 
   ngOnInit(): void {
+    this.dashboard =true;
     // this.toggleSidebar();
     // this.openNav();
     // this.closeNav();
@@ -29,4 +31,16 @@ export class DashboardComponent implements OnInit {
   //   document.getElementById("mySidenav").style.width = "0";
   //   document.getElementById("content").style.marginLeft= "0";
   // }
+
+
+  onFarmerPost(){
+    this.dashboard = false;
+    this.route = true;
+  }
+
+
+
+
 }
+
+
