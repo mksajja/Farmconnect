@@ -9,6 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class DashboardComponent implements OnInit {
   dashboard;
   route;
+  postDetails;
   constructor() { }
 
   ngOnInit(): void {
@@ -36,7 +37,9 @@ export class DashboardComponent implements OnInit {
   onFarmerPost(){
     this.dashboard = false;
     this.route = true;
+    this.postDetails = false;
   }
+
 
 
 

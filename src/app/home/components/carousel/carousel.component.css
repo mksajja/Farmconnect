@@ -85,3 +85,42 @@ div.new_html_code {
       display: block;
     }
 }
+
+.container-fluid {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 45px;
+}
+.centered {
+  position: absolute;
+  width: 17%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.img {
+  width: 100%;
+}
+.container-fluid .content {
+  position: absolute; /* Position the background text */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+}
+.btn {
+  font-weight: normal;
+    /* background-color: rgb(255, 255, 255); */
+    color: white;
+    box-shadow: none !important;
+    padding: 12px 24px;
+    border-width: initial;
+    border-color: initial;
+    border-image: initial;
+    border-style: none;
+}
+.btn:hover{
+background-color: rgb(255, 255, 255);
+color: rgb(0, 120, 130);
+}

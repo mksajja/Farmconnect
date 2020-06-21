@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-import { CommonService } from '../common.service';
+import { CommonService } from '../../../common.service';
 
 export interface TradeElement {
   id: string;

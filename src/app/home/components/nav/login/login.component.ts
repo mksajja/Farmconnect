@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() {
+  constructor(private router:Router) {
    /* document.body.style.margin="0";
     document.body.style.padding="0";
     document.body.style.backgroundImage = "url('assets/images/loginbgimg.jpg')";
@@ -32,6 +33,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  
+  onLogin(){
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

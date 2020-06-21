@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './home/components/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TradeInfoTableComponent } from './trade-info-table/trade-info-table.component';
+import { TradeInfoTableComponent } from './home/components/trade-info-table/trade-info-table.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table'
 import {HttpClientModule} from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';  
@@ -21,10 +21,10 @@ import { MatToolbarModule } from  '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './home/components/nav/signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './home/components/nav/login/login.component';
+import { DashboardComponent } from './home/components/nav/dashboard/dashboard.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -40,7 +40,7 @@ import {
   IgxNavbarModule,
   IgxGridModule
  } from "igniteui-angular";
-import { FarmerEditComponent } from './farmer-edit/farmer-edit.component';
+import { FarmerEditComponent } from './dashboard2/components/farmer-edit/farmer-edit.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatNativeDateModule} from '@angular/material/core';
 // import { MatMomentDateModule } from "@angular/material-moment-adapter";
@@ -52,7 +52,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatRadioModule } from '@angular/material/radio';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { MatSelectModule } from '@angular/material/select';
-import { FarmerpostFormComponent } from './farmerpost-form/farmerpost-form.component';
+import { FarmerpostFormComponent } from './home/components/nav/dashboard/farmer/farmerpost-form/farmerpost-form.component';
 @NgModule({
   declarations: [
     AppComponent,

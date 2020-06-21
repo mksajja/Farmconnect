@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FarmerEditComponent } from '../farmer-edit/farmer-edit.component';
+import { FarmerEditComponent } from './components/farmer-edit/farmer-edit.component';
 import { CommonService } from '../common.service';
 
 export interface PeriodicElement {
