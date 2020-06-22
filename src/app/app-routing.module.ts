@@ -6,6 +6,7 @@ import { LoginComponent } from './home/components/nav/login/login.component';
 import { DashboardComponent } from './home/components/nav/dashboard/dashboard.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { FarmerpostFormComponent } from './home/components/nav/dashboard/farmer/farmerpost-form/farmerpost-form.component';
+import { PostDetailsComponent } from './home/components/nav/dashboard/farmer/post-details/post-details.component';
 
 const routes: Routes = [
   {path: 'home', component:HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'dashboard2', component:Dashboard2Component},
   {path:'dashboard', component:DashboardComponent, children: [
     {path:'farmerpost-form', component:FarmerpostFormComponent},
+    {path:'post-details', component:PostDetailsComponent},
   ]},
  
 ];

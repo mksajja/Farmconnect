@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable,Subject} from 'rxjs';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable({
@@ -10,6 +10,9 @@ export class CommonService {
 
   private category = new BehaviorSubject<string>('');
   cast = this.category.asObservable();
+   
+  // private _dashboardRouteSource = new Subject<boolean>();
+  // routeoption$ = this._dashboardRouteSource.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -45,4 +48,8 @@ export class CommonService {
     const url = "http://localhost:3000/farmerTable"
     return this.httpClient.get<any>(url);
   }
+
+  // sendRouteOption(routeoption: boolean){
+  //   this._dashboardRouteSource.next(routeoption);
+  // }
 }

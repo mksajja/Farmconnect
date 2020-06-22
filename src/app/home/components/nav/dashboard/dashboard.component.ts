@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CommonService } from 'src/app/common.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,13 +8,30 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class DashboardComponent implements OnInit {
-  dashboard;
+  new;
+  old;
   route;
   postDetails;
-  constructor() { }
+  constructor(private commonService:CommonService) { }
 
   ngOnInit(): void {
-    this.dashboard =true;
+    this.new =true;
+    // this.commonService.routeoption$.subscribe(
+    //   res => {
+    //     if(res==true){
+    //       this.route = false;
+    //       this.old = false;
+    //       this.new = false;
+    //      }
+    //     else {
+    //       this.route = false;
+    //     }
+    //     console.log('routeOption',res);
+    //   }
+      
+    // )
+
+    
     // this.toggleSidebar();
     // this.openNav();
     // this.closeNav();
@@ -34,11 +52,12 @@ export class DashboardComponent implements OnInit {
   // }
 
 
-  onFarmerPost(){
-    this.dashboard = false;
-    this.route = true;
-    this.postDetails = false;
-  }
+  // onFarmerPost(){
+  //   this.new = false;
+  //   this.old = false;
+  //   this.route = true;
+  //   this.postDetails = false;
+  // }
 
 
 

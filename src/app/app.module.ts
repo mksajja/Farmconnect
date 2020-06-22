@@ -53,6 +53,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { MatSelectModule } from '@angular/material/select';
 import { FarmerpostFormComponent } from './home/components/nav/dashboard/farmer/farmerpost-form/farmerpost-form.component';
+import { PostDetailsComponent } from './home/components/nav/dashboard/farmer/post-details/post-details.component';
+import { NewFarmerComponent } from './home/components/nav/dashboard/farmer/new-farmer/new-farmer.component';
+import { OldFarmerComponent } from './home/components/nav/dashboard/farmer/old-farmer/old-farmer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +68,9 @@ import { FarmerpostFormComponent } from './home/components/nav/dashboard/farmer/
     Dashboard2Component,
     FarmerEditComponent,
     FarmerpostFormComponent,
+    PostDetailsComponent,
+    NewFarmerComponent,
+    OldFarmerComponent,
   ],
   entryComponents: [FarmerEditComponent],
   imports: [

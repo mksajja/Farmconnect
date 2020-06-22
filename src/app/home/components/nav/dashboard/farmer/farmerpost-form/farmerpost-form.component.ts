@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-farmerpost-form',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerpostFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private commonService:CommonService,
+              private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  onPost(){
+    this.router.navigateByUrl('dashboard/post-details');
+  }
 }
