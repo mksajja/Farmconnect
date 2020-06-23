@@ -12,7 +12,7 @@
             <img class="img-responsive" src="assets/images/75-751142_farmer-png-transparent-image-farmer-images-png.png" style="
             width: 177px;height:150px;
         "/>
-            <mat-radio-button  value="farmer" >Farmer</mat-radio-button>
+            <mat-radio-button #farmer  value="farmer" >Farmer</mat-radio-button>
 
         </label>
     </div>
@@ -21,7 +21,7 @@
         <img class="img-responsive" src="assets/images/CropBuyer.png" style="
             width: 177px;height:141px;
         "/>
-        <mat-radio-button class="example-radio-button" value="buyer">Buyer</mat-radio-button>
+        <mat-radio-button #buyer class="example-radio-button" value="buyer">Buyer</mat-radio-button>
     </label>
 </div>
 <div class="col-md-3 col-sm-3 text-center">
@@ -91,7 +91,7 @@
 
             <input matInput placeholder="PinCode" formControlName="pinCode" required>
         </mat-form-field>
-
+<span *ngIf="farmer.checked">
         <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>Document Type</mat-label>
             <mat-select formControlName="documentType" required>
@@ -106,6 +106,8 @@
             <mat-label>Document Number</mat-label>
             <input matInput placeholder="Document Number" formControlName="documentNumber" required>
         </mat-form-field>
+</span>
+<span *ngIf="buyer.checked">
         <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>Document Type</mat-label>
             <mat-select formControlName="documentType"  required>
@@ -120,6 +122,7 @@
             <mat-label>Document Number</mat-label>
             <input matInput placeholder="Document Number" formControlName="documentNumber" required>
         </mat-form-field>
+</span>
         <mat-form-field class="col-md-3" appearance="fill">
             <mat-label>License Info</mat-label>
             <input matInput placeholder="License Info" formControlName="licenseInfo" required>
