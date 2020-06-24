@@ -25,26 +25,7 @@
     }
   ],
   "profiles": [
-    {
-      "id": 1,
-      "userId": 1,
-      "job": "Plumber"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "job": "developer"
-    },
-    {
-      "id": 3,
-      "userId": 3,
-      "job": "Manager"
-    },
-    {
-      "id": 4,
-      "userId": 4,
-      "job": "HR"
-    }
+   
   ],
   "products": [
     {
@@ -121,9 +102,9 @@
   "search": [
     {
       "category": "",
-      "product": "",
-      "location": "",
-      "distance": "",
+      "product": "dgdg",
+      "location": "bdfb",
+      "distance": 20,
       "id": 1
     }
   ],
@@ -199,4 +180,5 @@
       "MinQtyPurchase": "20kgs"
     }
   ]
+
 }

@@ -458,6 +458,12 @@ body {
   min-height: 748px;
 }
 }
+.bg-color{
+  background-color: #2dc2bc;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
 
 
 

@@ -1,8 +1,8 @@
 <div class="login">
 	<h2>Login</h2>
-	<form>
-		<input type="text" class="user active" value="User name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
-		<input type="password" class="lock active" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"/>
+	<form [formGroup]="loginForm">
+		<input type="text" class="user active" value="User name" formControlName="userName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
+		<input type="password" class="lock active" value="Password" formControlName="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"/>
 	</form>
 	<div class="forgot">
 		 <div class="login-check">
@@ -15,7 +15,7 @@
 		<div class="clear"> </div>
 	</div>
 	<div class="login-bwn">
-	   <input type="submit" (click)="onLogin()" value="Log in" />
+	   <button type="submit"  class="btn bg-color" (click)="onLogin(this.loginForm.value)">Login</button>
 	</div>
 	<div class="login-bottom">
 		<h3>Login</h3>

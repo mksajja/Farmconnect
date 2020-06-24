@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {Observable,Subject} from 'rxjs';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,14 @@ export class CommonService {
   getfarmerTable(){
     const url = "http://localhost:3000/farmerTable"
     return this.httpClient.get<any>(url);
+  }
+
+  postloginData(loginFields: any): Observable<any> {
+    console.log('loginFields',loginFields);
+    const url = "http://localhost:3000/profiles"
+    return this.httpClient.post<any>(url, loginFields);
+    
+    
   }
 
   // sendRouteOption(routeoption: boolean){

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { CommonService } from 'src/app/common.service';
 
 
 @Component({
@@ -8,8 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router:Router) {
+  loginForm: FormGroup;
+  constructor(private router:Router,
+              private fb:FormBuilder,
+              private commonService:CommonService) {
    /* document.body.style.margin="0";
     document.body.style.padding="0";
     document.body.style.backgroundImage = "url('assets/images/loginbgimg.jpg')";
@@ -33,9 +37,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      userName: [''],
+      password: [''],
+    });
   }
   
-  onLogin(){
+  onLogin(value){
+    console.log('loginForm',value);
+    this.commonService.postloginData(value);
     this.router.navigateByUrl('/dashboard');
   }
 
