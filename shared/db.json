@@ -25,7 +25,21 @@
     }
   ],
   "profiles": [
-   
+    {
+      "userName": "kavya",
+      "password": "p1234",
+      "id": 1
+    },
+    {
+      "userName": "kavya",
+      "password": "p1234",
+      "id": 2
+    },
+    {
+      "userName": "sravya",
+      "password": "p1234",
+      "id": 3
+    }
   ],
   "products": [
     {
@@ -180,5 +194,4 @@
       "MinQtyPurchase": "20kgs"
     }
   ]
-
 }

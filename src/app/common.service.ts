@@ -50,12 +50,16 @@ export class CommonService {
     return this.httpClient.get<any>(url);
   }
 
-  postloginData(loginFields: any): Observable<any> {
+  postProfile(loginFields: Object) {
     console.log('loginFields',loginFields);
     const url = "http://localhost:3000/profiles"
-    return this.httpClient.post<any>(url, loginFields);
-    
-    
+    this.httpClient.post(url, loginFields).subscribe(data => {
+      console.log(data);
+    });
+  }
+  getProfiles(): Observable<any> {
+    const url = "http://localhost:3000/profiles"
+    return this.httpClient.get<any>(url);
   }
 
   // sendRouteOption(routeoption: boolean){
