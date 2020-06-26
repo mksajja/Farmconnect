@@ -11,21 +11,28 @@
 .search-btn
 {
     height: 50px;
-    background: #ffeb3b;
+    /* background: #ffeb3b; */
+    background:  #57a9d2 ;
     border: none;
     color: #000;
     border-radius: 25px;
 
 }
 .search-btn:hover{
-    background: #ffc107;
+    /* background: #ffc107; */
+    background: #0088cc;
     cursor: pointer;
 }
 .form-box{
-    background: rgba(108,90,140);
+   /* background: rgba(108,90,140); */
+   background: #46765d;
     padding: 30px;
 }
-
+.btn-secondary {
+    color: #fff;
+    background-color: transparent;
+    border-color: ghostwhite;
+}
 
     @media(max-width:767px) {
         .hide-link{display:none;}
